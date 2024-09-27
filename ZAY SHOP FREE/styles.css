@@ -1,21 +1,29 @@
-body {
-  font-family: Arial, sans-serif;
+* {
   margin: 0;
   padding: 0;
+  font-family: "Playwrite DE Grund", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
 
+.container {
+  margin: auto;
+  padding: 0 10%;
+}
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #e7f7d8;
-  padding: 20px;
+  padding: 20px 0px;
 }
 
-.navbar .logo {
-  color: rgb(0, 0, 0);
-  font-size: 24px;
-  font-weight: bold;
+.navbar .logo img {
+  padding: auto;
+  margin-right: 20px;
+}
+nav {
+  text-align: right;
 }
 
 .navbar .nav-links {
@@ -30,125 +38,131 @@ body {
   text-decoration: none;
   padding: 5px 10px;
   margin-right: 20px;
+  transition: transform 0.5s;
 }
 
 .navbar .nav-links li a:hover {
-  background-color: #7be962;
-  border-radius: 4px;
+  background-color: #a6daf8;
+  border-radius: 3px;
 }
 
-/* Home Section with Carousel */
+/* Home Section  */
 .home-section {
   position: relative;
-  background-color: #f1f1f1;
-  padding: 50px;
+  background-color: #efefef;
+  padding: auto;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.fas-fa-chevron-left {
-  
-}
-.carousel {
-  width: 80%;
-  overflow: hidden;
+.row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 1300px;
+  margin: auto;
   position: relative;
 }
 
-.carousel-slide {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
+.col-2 {
+  flex-basis: 50%;
+  min-width: 300px;
 }
 
-.slide-content {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  box-sizing: border-box;
-  padding: 20px;
-}
-
-.description {
-  flex: 1;
-  padding-right: 20px;
-}
-
-.image {
-  flex: 1;
-  text-align: center;
-}
-
-.image img {
+.col-2 img {
   max-width: 100%;
-  border-radius: 5px;
+  padding: 50px 0;
 }
 
-.prev,
-.next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  font-size: 24px;
-  border-radius: 50%;
+.col-2 h1 {
+  font-size: 50px;
+  margin: 25px 0;
+  line-height: 60px;
 }
 
-.prev {
-  left: 10px;
+.categories-section {
+  padding: 50px;
+  background-color: #fffbfb;
 }
 
-.next {
-  right: 10px;
+.products-section {
+  padding: 50px;
+  background-color: #e3eaec;
 }
-
-.prev:hover,
-.next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-.products-section,
-.categories-section,
 .contact-section {
   padding: 50px;
-  background-color: #ffffff;
+  background-color: #424242;
+  color: #fffbfb;
 }
 
-.products-section h2,
-.categories-section h2,
-.contact-section h2 {
+.products-section h1,
+.categories-section h1,
+.contact-section h1 {
   text-align: center;
-  margin-bottom: 20px;
+
+  font-size: 40px;
+  color: #555;
+}
+.products-section h3,
+.categories-section h3 {
+  padding: 20px;
+  font-size: 22px;
+  text-align: center;
+  color: #333;
 }
 
+.products-section p,
+.categories-section p {
+  padding: 20px;
+  font-size: 18px;
+  text-align: center;
+  color: #555;
+}
+
+.product-card:hover {
+  transform: translateY(-7px);
+}
+
+.category-card:hover {
+  transform: translateY(-7px);
+}
 .product-grid,
 .category-grid {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 30px;
 }
 
-.product-card,
 .category-card {
-  background-color: #f4f4f4;
+  background-color: none;
   padding: 20px;
   text-align: center;
-  border-radius: 5px;
-  width: 200px;
+  transition: transform 0.5s;
+}
+.product-card {
+  background-color: none;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.5s;
 }
 
-.product-card img,
 .category-card img {
-  width: 100%;
+  width: 300px;
   height: auto;
-  border-radius: 5px;
+  border-radius: 50%;
+  margin: auto;
+  border-color: solid black 0.5px;
 }
-
+.product-card img {
+  width: 300px;
+  height: auto;
+  border-radius: 4px;
+  margin: auto;
+  border-color: solid black 1px;
+}
 .product-card button {
   background-color: #333;
   color: white;
