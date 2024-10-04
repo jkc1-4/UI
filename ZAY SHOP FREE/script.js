@@ -1,16 +1,24 @@
-const hamburger = document.querySelector(".hamburger");
-const navLinks = document.querySelector(".nav-links");
+document.addEventListener("DOMContentLoaded", function () {
+  const hamburger = document.querySelector(".hamburger");
+  const navLinks = document.querySelector(".nav-links");
 
-let menuOpen = flase;
+  // Toggle nav on hamburger click
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+    hamburger.classList.toggle("open");
+  });
 
-hamburger.addEventListener("click", () => {
-  if (menuOpen == flase) {
-    navLinks.style.display = "block";
-    menuOpen = true;
-  } else if (menuOpen == true) {
-    navLinks.style.display = "none";
-    menuOpen = false;
-  }
+  // Close nav when clicking outside of it
+  document.addEventListener("click", (event) => {
+    const isClickInsideNav = navLinks.contains(event.target);
+    const isClickOnHamburger = hamburger.contains(event.target);
+
+    // If click is outside the nav links and not on hamburger, close nav
+    if (!isClickInsideNav && !isClickOnHamburger) {
+      navLinks.classList.remove("active");
+      hamburger.classList.remove("open");
+    }
+  });
 });
 
 document.addEventListener("DOMContentLoaded", () => {

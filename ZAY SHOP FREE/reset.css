@@ -13,26 +13,23 @@
   box-sizing: border-box;
 }
 
-/*
-    Remove list styles (bullets/numbers)
-    in case you use it with normalize.css
-  */
+/* Remove list styles (bullets/numbers) */
 ol,
 ul {
   list-style: none;
 }
 
-/* For images to not be able to exceed their container */
+/* For images to not exceed their container */
 img {
   max-width: 100%;
 }
 
-/* Removes spacing between cells in tables */
+/* Remove spacing between cells in tables */
 table {
   border-collapse: collapse;
 }
 
-/* Revert the 'white-space' property for textarea elements on Safari */
+/* Revert 'white-space' for textareas in Safari */
 textarea {
   white-space: revert;
 }
