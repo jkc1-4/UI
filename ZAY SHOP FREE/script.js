@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   const hamburger = document.querySelector(".hamburger");
   const navLinks = document.querySelector(".nav-links");
+  const navLinkItems = document.querySelectorAll(".nav-links li a"); // Select all nav links
 
   // Toggle nav on hamburger click
   hamburger.addEventListener("click", () => {
@@ -19,7 +20,16 @@ document.addEventListener("DOMContentLoaded", function () {
       hamburger.classList.remove("open");
     }
   });
+
+  // Close nav when clicking on a nav link and navigate to the section
+  navLinkItems.forEach((navLink) => {
+    navLink.addEventListener("click", () => {
+      navLinks.classList.remove("active");
+      hamburger.classList.remove("open");
+    });
+  });
 });
+
 
 document.addEventListener("DOMContentLoaded", () => {
   // Example of adding functionality for search or cart
@@ -36,3 +46,4 @@ document.addEventListener("DOMContentLoaded", () => {
     alert("Cart functionality coming soon!");
   });
 });
+
