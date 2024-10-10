@@ -30,7 +30,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-
 document.addEventListener("DOMContentLoaded", () => {
   // Example of adding functionality for search or cart
   const searchLink = document.querySelector('a[href="#search"]');
@@ -47,3 +46,43 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+$(document).ready(function () {
+  let currentIndex = 0;
+  const slides = $(".slider-slide");
+  const dots = $(".dot");
+  const totalSlides = slides.length;
+
+  // Show the first slide
+  slides.eq(currentIndex).show();
+  dots.eq(currentIndex).addClass("active");
+
+  // Function to update the current slide and dot
+  function updateSlide(index) {
+    slides.eq(currentIndex).hide(); // Hide current slide
+    dots.eq(currentIndex).removeClass("active"); // Remove active class from current dot
+
+    currentIndex = index; // Update the current index
+    slides.eq(currentIndex).fadeIn(); // Show new slide
+    dots.eq(currentIndex).addClass("active"); // Add active class to new dot
+  }
+
+  // Next button click
+  $(".next").click(function () {
+    updateSlide((currentIndex + 1) % totalSlides); // Move to the next slide
+  });
+
+  // Previous button click
+  $(".prev").click(function () {
+    updateSlide((currentIndex - 1 + totalSlides) % totalSlides); // Move to the previous slide
+  });
+
+  // Dot click functionality
+  dots.each(function (index) {
+    $(this).click(function () {
+      updateSlide(index); // Update to the corresponding slide when dot is clicked
+    });
+  });
+  setInterval(function () {
+    updateSlide((currentIndex + 1) % totalSlides); // Automatically go to the next slide
+  }, 4000); // 3000 milliseconds = 3 seconds
+});

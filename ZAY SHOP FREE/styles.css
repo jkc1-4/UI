@@ -110,6 +110,64 @@
   line-height: 60px;
 }
 
+.slider-container {
+  position: relative;
+  width: 100%;
+  max-width: 1300px;
+  margin: auto;
+}
+
+.slider-wrapper {
+  position: relative; /* Keep this as is */
+  overflow: hidden; /* Keep this to hide overflow */
+}
+
+.slider-slide {
+  display: none; /* Keep this to hide slides initially */
+  position: relative; /* Change to relative */
+  width: 100%;
+}
+
+.slider-slide:first-child {
+  display: block; /* Ensure the first slide is shown initially */
+}
+
+.slider-controls {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  display: flex;
+  justify-content: space-between;
+  z-index: 10; /* Ensure controls are above slides */
+}
+
+.slider-controls span {
+  cursor: pointer;
+  font-size: 40px;
+  color: #333;
+  padding: 0 15px;
+}
+
+.dots {
+  text-align: center; /* Center the dots */
+  margin-top: 10px; /* Space above the dots */
+}
+
+.dot {
+  height: 10px; /* Height of the dot */
+  width: 10px; /* Width of the dot */
+  margin: 0 5px; /* Space between dots */
+  background-color: #bbb; /* Default color of the dots */
+  border-radius: 50%; /* Make them circular */
+  display: inline-block; /* Allow inline positioning */
+  cursor: pointer; /* Pointer on hover */
+  transition: background-color 0.4s ease; /* Smooth transition */
+}
+
+.dot.active {
+  background-color: #4bac52; /* Active dot color */
+}
+
 .categories-section {
   padding: 50px;
   background-color: #fffbfb;
@@ -262,6 +320,7 @@
 @media screen and (max-width: 600px) {
   .hamburger {
     display: flex;
+    padding: 2px;
   }
   /* Optional Hamburger Animation */
   .hamburger.open .bar:nth-child(1) {
